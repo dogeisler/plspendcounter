@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+	<meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="angular-locale_es-ar.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+
+    </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#">Gastos para todos</a>
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" ng-controller="TotalCtrl">
+	
+	  <div class="hero-unit">
+        <h2>Gastos para todos</h2>
+        <h1>{{total|currency}}</h1>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span-one-third" ng-controller="SubTotalAerolineas">
+          <h3>Aerolineas</h3>
+          <h2 ng-model="subtotal">{{subtotal|currency}}</h2>
+        </div>
+        <div class="span-one-third" ng-controller="SubTotalFPT">
+          <h3>Futbol para todos</h3>
+          <h2 ng-model="subtotal">{{subtotal|currency}}</h2>
+       </div>
+        <div class="span-one-third" ng-controller="SubTotalAPT">
+          <h3>Autom. para todos</h3>
+          <h2 ng-model="subtotal">{{subtotal|currency}}</h2>
+        </div>
+      </div>
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
